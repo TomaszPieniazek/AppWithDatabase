@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(FeedReaderContract.FeedEntry.getColumnNameTekst1(),firstText);
         values.put(FeedReaderContract.FeedEntry.getColumnNameTekst2(),secondText);
-        long newRowId = db.insert(FeedReaderContract.FeedEntry.getTableName(), null, values);
+
+        db.insert(FeedReaderContract.FeedEntry.getTableName(), null, values);
     }
     public void onClickView(View view)
     {
