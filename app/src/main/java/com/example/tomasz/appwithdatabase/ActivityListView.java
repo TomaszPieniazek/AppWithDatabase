@@ -42,7 +42,7 @@ public class ActivityListView extends AppCompatActivity {
         );
 
 
-        List itemIds = new ArrayList<>();
+        List items = new ArrayList<>();
 
         while(cursor.moveToNext()) {
             long itemId = cursor.getLong(
@@ -52,13 +52,11 @@ public class ActivityListView extends AppCompatActivity {
             String itemText2= cursor.getString(
                     cursor.getColumnIndexOrThrow(FeedReaderContract.FeedEntry.COLUMN_NAME_TEKST2));
             String calosc=itemId+" "+itemText1+" "+itemText2;
-            itemIds.add(calosc);
-
-
+            items.add(calosc);
 
         }
         cursor.close();
-        ListAdapter adap = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,itemIds);
+        ListAdapter adap = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items);
         lv.setAdapter(adap);
     }
 }
